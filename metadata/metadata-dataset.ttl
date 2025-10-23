@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b> a dcat:Resource,
+    dcat:Dataset;
+  <http://www.w3.org/2000/01/rdf-schema#label> "Airplane Crash History";
+  dcterms:title "Airplane Crash History";
+  dcat:version "1";
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2025-10-23T12:47:24.322923907Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2025-10-23T14:36:35.291182037Z"^^xsd:dateTime;
+  dcterms:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
+  dcterms:description "A FAIRified dataset of major airplane crashes, including details on the flight, aircraft, location, and casualties. Created for the FAIR Data Engineering course at the University of Twente.";
+  dcterms:conformsTo <http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604>,
+    <http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604>;
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b#identifier>;
+  dcterms:accessRights <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b#accessRights>;
+  dcterms:publisher [ a foaf:Agent;
+      foaf:name "https://w3id.org/FAIR-course-UT/2025-2026/group23"
+    ];
+  dcterms:isPartOf <http://localhost:8080/catalog/21958cc0-40c2-41c4-8dc5-f093acc2d7bd>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcterms:issued "2025-10-22T22:00:00Z"^^xsd:dateTime;
+  dcat:contactPoint <mailto:diogosarmento4@gmail.com>;
+  dcat:keyword "air safety", "aviation", "plane crashes";
+  dcat:theme <http://vocabularies.unesco.org/thesaurus/concept1959>;
+  dcat:distribution <http://localhost:8080/distribution/e1e78f0c-766a-4106-9e26-aaec0b6f3e85>,
+    <http://localhost:8080/distribution/07d0de2a-3bd1-431f-b423-81fd0f68eda5> .
+
+<http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b" .
+
+<http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b#accessRights>
+  a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost:8080/distribution/> a ldp:DirectContainer, ldp:DirectContainer;
+  dcterms:title "Distributions", "Distributions";
+  ldp:hasMemberRelation dcat:distribution, dcat:distribution;
+  ldp:membershipResource <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b>,
+    <http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b>;
+  ldp:contains <http://localhost:8080/distribution/e1e78f0c-766a-4106-9e26-aaec0b6f3e85>,
+    <http://localhost:8080/distribution/07d0de2a-3bd1-431f-b423-81fd0f68eda5>, <http://localhost:8080/distribution/e1e78f0c-766a-4106-9e26-aaec0b6f3e85>,
+    <http://localhost:8080/distribution/07d0de2a-3bd1-431f-b423-81fd0f68eda5> .
+
+<http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604> <http://www.w3.org/2000/01/rdf-schema#label>
+    "Dataset Profile", "Dataset Profile" .
+
+<http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost:8080/dataset/75cd3ddf-7b37-4f08-bd5e-d9a73b09378b/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
