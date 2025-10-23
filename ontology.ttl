@@ -14,83 +14,92 @@
 #    Datatypes
 #################################################################
 
-###  http://schema.org/URL
-<http://schema.org/URL> rdf:type rdfs:Datatype .
-
-
 ###  http://www.w3.org/2001/XMLSchema#date
 xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type rdfs:Datatype .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#crashedIn
-:crashedIn rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           owl:inverseOf :isCrashSiteOf ;
-           rdfs:domain :flight ;
-           rdfs:range :place .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#crashedIn
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#crashedIn> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              owl:inverseOf <https://w3id.org/FAIR-course-UT/2025-2026/group23#isCrashSiteOf> ;
+                                                              rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                              rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                              rdfs:comment "Indicates the location where an aircraft crashed." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#flew
-:flew rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf owl:topObjectProperty ;
-      owl:inverseOf :flownIn ;
-      rdfs:domain :airplaneModel ;
-      rdfs:range :flight .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#flew
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#flew> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         owl:inverseOf <https://w3id.org/FAIR-course-UT/2025-2026/group23#flownIn> ;
+                                                         rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#airplaneModel> ;
+                                                         rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                         rdfs:comment "Relates an airplane model to a specific flight it was used for" .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#flownIn
-:flownIn rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf owl:topObjectProperty ;
-         rdfs:domain :flight ;
-         rdfs:range :airplaneModel .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#flownIn
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#flownIn> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                            rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#airplaneModel> ;
+                                                            rdfs:comment "Relates an airplane model to a specific flight it was used for" .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#hadDestination
-:hadDestination rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                owl:inverseOf :isDestinationOf ;
-                rdfs:domain :flight ;
-                rdfs:range :place .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#hadDestination
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#hadDestination> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                   owl:inverseOf <https://w3id.org/FAIR-course-UT/2025-2026/group23#isDestinationOf> ;
+                                                                   rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                                   rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                                   rdfs:comment "Specifies the destination of a flight." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#hasOrigin
-:hasOrigin rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           owl:inverseOf :isOriginOf ;
-           rdfs:domain :flight ;
-           rdfs:range :place .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#hasOrigin
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#hasOrigin> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              owl:inverseOf <https://w3id.org/FAIR-course-UT/2025-2026/group23#isOriginOf> ;
+                                                              rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                              rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                              rdfs:comment "Specifies the origin of a flight." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#isCrashSiteOf
-:isCrashSiteOf rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain :place ;
-               rdfs:range :flight .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#isCrashSiteOf
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#isCrashSiteOf> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                                  rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                                  rdfs:comment "Indicates that a place is the crash site of an aircraft." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#isDestinationOf
-:isDestinationOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain :place ;
-                 rdfs:range :flight .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#isDestinationOf
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#isDestinationOf> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                                    rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                                    rdfs:comment "Indicates that a place is the destination of a flight." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#isOriginOf
-:isOriginOf rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :place ;
-            rdfs:range :flight .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#isOriginOf
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#isOriginOf> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#place> ;
+                                                               rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                               rdfs:comment "Indicates that a place is the origin of a flight." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#operatedBy
-:operatedBy rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :flight ;
-            rdfs:range :airline .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#operatedBy
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#operatedBy> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                                                               rdfs:range <https://w3id.org/FAIR-course-UT/2025-2026/group23#airline> ;
+                                                               rdfs:comment "Relates a flight to the airline that operated it." .
 
 
 #################################################################
@@ -100,91 +109,95 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://dbpedia.org/ontology/casualties
 dbo:casualties rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:domain :flight ;
+               rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
                rdfs:range xsd:int .
 
 
 ###  http://dbpedia.org/ontology/crewSize
 dbo:crewSize rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf owl:topDataProperty ;
-             rdfs:domain :flight ;
+             rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
              rdfs:range xsd:int .
+
+
+###  http://dbpedia.org/ontology/description
+dbo:description rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+                rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/passengers
 dbo:passengers rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:domain :flight ;
+               rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
                rdfs:range xsd:int .
 
 
 ###  http://dbpedia.org/ontology/registration
 dbo:registration rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain :flight ;
+                 rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
                  rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/summary
 dbo:summary rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf owl:topDataProperty ;
-            rdfs:domain :flight ;
+            rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
             rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/survivors
 dbo:survivors rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
-              rdfs:domain :flight ;
+              rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
               rdfs:range xsd:int .
 
 
 ###  http://purl.org/dc/terms/date
 <http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf owl:topDataProperty ;
-                                rdfs:domain :flight ;
+                                rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
                                 rdfs:range xsd:date .
-
-
-###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf owl:topDataProperty ;
-                                       rdfs:domain :flight ;
-                                       rdfs:range xsd:string .
 
 
 ###  http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
                                  rdfs:subPropertyOf owl:topDataProperty ;
-                                 rdfs:domain :flight ;
+                                 rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
                                  rdfs:range xsd:string .
 
 
-###  http://schema.org/URL
-<http://schema.org/URL> rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf owl:topDataProperty ;
-                        rdfs:domain :flight ;
-                        rdfs:range <http://schema.org/URL> .
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain <https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> ;
+           rdfs:range xsd:anyURI .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#airline
-:airline rdf:type owl:Class .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#airline
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#airline> rdf:type owl:Class ;
+                                                            rdfs:comment "A commercial organization that provides scheduled air transport services for passengers or cargo." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#airplaneModel
-:airplaneModel rdf:type owl:Class .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#airplaneModel
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#airplaneModel> rdf:type owl:Class ;
+                                                                  rdfs:comment "A specific model of aircraft" .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#flight
-:flight rdf:type owl:Class .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#flight
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#flight> rdf:type owl:Class ;
+                                                           rdfs:comment "A planed journey made by an aircraft, from a specific origin to a destination." .
 
 
-###  https://w3id.org/FAIR-course-UT/2025-2026/group23/ont#place
-:place rdf:type owl:Class .
+###  https://w3id.org/FAIR-course-UT/2025-2026/group23#place
+<https://w3id.org/FAIR-course-UT/2025-2026/group23#place> rdf:type owl:Class ;
+                                                          rdfs:comment "A geographical location" .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

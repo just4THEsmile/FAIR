@@ -1,0 +1,79 @@
+@prefix :         <http://fairdatapoint.org/> .
+@prefix dash:     <http://datashapes.org/dash#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+
+:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+
+  sh:property [
+    sh:path dct:title ;
+    sh:name "Title" ;
+    sh:description "The main title of the dataset." ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:order 1 ;
+  ], [
+    sh:path dct:description ;
+    sh:name "Description" ;
+    sh:description "A detailed, human-readable description of the dataset." ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    dash:editor dash:TextAreaEditor ;
+    sh:order 2 ;
+  ], [
+    sh:path dct:publisher ;
+    sh:name "Publisher" ;
+    sh:description "The entity responsible for publishing the dataset. This can be a literal name or a URI." ;
+    sh:class foaf:Agent ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    sh:order 3 ;
+  ], [
+    sh:path dcat:keyword ;
+    sh:name "Keywords" ;
+    sh:description "Tags or keywords to aid in discovery." ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    sh:order 4 ;
+  ], [
+    sh:path dct:issued ;
+    sh:name "Issued Date" ;
+    sh:description "The date the dataset was formally published." ;
+    sh:datatype xsd:dateTime ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:DateTimePickerEditor ;
+    sh:order 5 ;
+  ], [
+    sh:path dct:license ;
+    sh:name "License" ;
+    sh:description "A URL pointing to the license for this dataset (e.g., https://creativecommons.org/licenses/by/4.0/)." ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    sh:order 6 ;
+  ], [
+    sh:path dcat:contactPoint ;
+    sh:name "Contact Point" ;
+    sh:description "An email address for inquiries, formatted as a 'mailto:' link (e.g., mailto:your.email@example.com)." ;
+    sh:nodeKind sh:IRI ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    sh:order 7 ;
+  ], [
+    sh:path dcat:landingPage ;
+    sh:name "Landing Page" ;
+    sh:description "(Optional) A URL of a web page that provides more information about the dataset." ;
+    sh:nodeKind sh:IRI ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    sh:order 8 ;
+  ] .
