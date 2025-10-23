@@ -8,13 +8,10 @@ Redirect 301 /FAIR-course-UT/2025-2026/group23/data/dataset https://github.com/j
 Redirect 301 /FAIR-course-UT/2025-2026/group23/data/original https://github.com/just4THEsmile/FAIR/raw/master/data/original.json
 
 # ontology
-Redirect 301 /FAIR-course-UT/2025-2026/group23/ont https://github.com/just4THEsmile/FAIR/tree/master/ontology
 
-Redirect 301 /FAIR-course-UT/2025-2026/group23/ont/ontology  https://github.com/just4THEsmile/FAIR/raw/master/ontology/ontology.ttl
+Redirect 301 /FAIR-course-UT/2025-2026/group23/ont https://github.com/just4THEsmile/FAIR/raw/master/ontology/ontology.ttl
 
 # metadata 
-Redirect 301 /FAIR-course-UT/2025-2026/group23/ont https://github.com/just4THEsmile/FAIR/tree/master/ontology
 
-Redirect 301 /FAIR-course-UT/2025-2026/group23/ont/ontology  https://github.com/just4THEsmile/FAIR/raw/master/ontology/ontology.ttl
 
-Redirect 301 /FAIR-course-UT/2025-2026/group23/metadata https://github.com/just4THEsmile/FAIR/raw/master/metadata
+Redirect 301 /FAIR-course-UT/2025-2026/group23/metadata https://github.com/just4THEsmile/FAIR/tree/master/metadata
